@@ -1,73 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public enum FaceDirection { Left, Right };
-	public FaceDirection direction = FaceDirection.Right;
-	public float rotateSpeed = 3;
+	Vector3 direction;
 
-	Crate crate;
-	HingeJoint joint;
-	public LineRenderer lineRenderer;
+	public float moveSpeed = 5f;
+	private float turnSmoothVelocity;
+	private readonly float turnSmoothTime = 0.1f;
 
-    private void Awake()
+	public Transform cameraContainer;
+
+	new Rigidbody rigidbody;
+
+	private void Awake()
+	{
+		rigidbody = GetComponent<Rigidbody>();
+	}
+
+	private void Update()
     {
-		joint = GetComponent<HingeJoint>();        
+		direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		if (direction.magnitude > 1)
+		{
+			direction.Normalize();
+		}
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float xMov = Input.GetAxis("Horizontal");
-        float yMov = Input.GetAxis("Vertical");
+	private void FixedUpdate()
+	{
+		if (direction.magnitude > 0)
+		{
+			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraContainer.eulerAngles.y;
+			float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-		if (xMov > 0)
-		{
-			direction = FaceDirection.Right;
-		}
-		else if (xMov < 0)
-		{
-			direction = FaceDirection.Left;
-		}
-
-		if (Input.GetButtonDown("Fire1"))
-		{
-			if (crate)
-			{
-				joint.connectedBody = null;
-				crate = null;
-				Debug.Log("Dropping crate", crate);
-			}
-			else
-			{
-				Collider[] crates = Physics.OverlapBox(transform.position - Vector3.up * 2.5f, new Vector3(1, 2, 1), Quaternion.identity, 1 << 6);
-				if (crates.Length > 0)
-				{
-					crate = crates[0].GetComponent<Crate>();
-					joint.connectedBody = crate.rigidbody;
-					Debug.Log("Grabbing crate", crate);
-					// Harpoon the crate
-				}
-				else
-				{
-					Debug.Log("No crates found", crate);
-				}
-			}
-		}
-		Debug.DrawRay(transform.position, Vector3.RotateTowards(transform.forward, direction == FaceDirection.Right ? Vector3.forward : Vector3.back, rotateSpeed * Time.deltaTime, 0f));
-		transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, direction == FaceDirection.Right ? Vector3.forward : Vector3.back, rotateSpeed * Time.deltaTime, 0f));
-
-		if (crate)
-		{
-			lineRenderer.widthMultiplier = 0.1f; 
-			lineRenderer.SetPositions(new Vector3[] { transform.position - Vector3.up * 0.5f, crate.transform.position + crate.transform.up * 0.5f });
+			Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+			Debug.Log(moveDirection);
+			rigidbody.velocity = moveDirection * moveSpeed;
 		}
 		else
 		{
-			lineRenderer.widthMultiplier = 0; 
+			rigidbody.velocity = Vector3.zero;
 		}
-    }
+	}
 }
