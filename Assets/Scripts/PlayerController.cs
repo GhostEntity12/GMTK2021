@@ -37,12 +37,12 @@ public class PlayerController : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 			Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-			Debug.Log(moveDirection);
 			rigidbody.velocity = moveDirection * moveSpeed;
 		}
 		else
 		{
 			rigidbody.velocity = Vector3.zero;
+			rigidbody.angularVelocity = Vector3.zero;
 		}
 	}
 }
