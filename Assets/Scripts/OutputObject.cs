@@ -4,8 +4,6 @@ using UnityEngine;
 
 public abstract class OutputObject : MonoBehaviour
 {
-	protected virtual void Trigger()
-	{
-
-	}
+	public abstract void Trigger();
+	public abstract void Untrigger();
 }

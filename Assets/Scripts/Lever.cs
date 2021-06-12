@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Lever : InputObject
 {
-	protected override void Interact()
+	public override void Interact()
 	{
 
+	}
+
+	public override void EndInteract()
+	{
+		throw new System.NotImplementedException();
 	}
 }
