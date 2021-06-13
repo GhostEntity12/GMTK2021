@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,10 +14,12 @@ public class PlayerController : MonoBehaviour
 	public Transform cameraContainer;
 
 	new Rigidbody rigidbody;
+	public int interactionLayer;
 
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody>();
+		interactionLayer = 1 << gameObject.layer | 1 << 8;
 	}
 
 	private void Update()
@@ -25,6 +28,10 @@ public class PlayerController : MonoBehaviour
 		if (direction.magnitude > 1)
 		{
 			direction.Normalize();
+		}
+		if (Input.GetButtonDown("Interact"))
+		{
+			Physics.OverlapBox(transform.position, new Vector3(1, 1, 1), Quaternion.identity, interactionLayer).ToList().Where(c => c.GetComponent<Lever>()).Select(i => i.GetComponent<Lever>()).ToList().ForEach(l => l.Toggle());
 		}
     }
 
