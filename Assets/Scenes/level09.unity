@@ -252,6 +252,7 @@ MonoBehaviour:
   - {fileID: 1539804610}
   - {fileID: 528155922}
   lever: {fileID: 91840960}
+  leverPullSound: {fileID: 0}
 --- !u!65 &91840957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -853,6 +854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4698565950377231112, guid: d8485345dee89cb40b5927f7db113743, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 102900000, guid: ab5caa11e9c17d644aa321ce33790bd4, type: 3}
     - target: {fileID: 8234655694774660635, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: m_text
       value: level 9

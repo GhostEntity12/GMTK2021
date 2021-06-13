@@ -212,6 +212,7 @@ MonoBehaviour:
   outputs:
   - {fileID: 0}
   lever: {fileID: 7554737899724439765}
+  leverPullSound: {fileID: 8300000, guid: de18d54b0ba1f364197b2353d05276d6, type: 3}
 --- !u!65 &6675538149928385701
 BoxCollider:
   m_ObjectHideFlags: 0

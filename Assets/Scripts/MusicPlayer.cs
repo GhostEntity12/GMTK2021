@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    GameObject musicPrefab;
+    public GameObject musicPrefab;
     AudioSource musicSource;
     // Start is called before the first frame update
     void Awake()
@@ -13,6 +13,9 @@ public class MusicPlayer : MonoBehaviour
 		if (!musicSource)
 		{
             musicSource = Instantiate(musicPrefab).GetComponent<AudioSource>();
+            DontDestroyOnLoad(musicSource);
 		}
+
+
     }
 }
