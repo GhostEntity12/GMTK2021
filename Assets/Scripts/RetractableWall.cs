@@ -6,12 +6,13 @@ public class RetractableWall : OutputObject
 {
 	new Collider collider;
 	new MeshRenderer renderer;
-	bool isPassable;
+	public bool isSolid = true;
 
 	private void Awake()
 	{
 		collider = GetComponent<BoxCollider>();
 		renderer = GetComponent<MeshRenderer>();
+		collider.enabled = renderer.enabled = isSolid;
 	}
 
 	public override void Trigger() => Toggle();
@@ -20,8 +21,7 @@ public class RetractableWall : OutputObject
 
 	void Toggle()
 	{
-		collider.enabled = renderer.enabled = isPassable;
-		isPassable = !isPassable;
-
+		isSolid = !isSolid;
+		collider.enabled = renderer.enabled = isSolid;
 	}
 }
