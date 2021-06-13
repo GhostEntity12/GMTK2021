@@ -2155,10 +2155,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelComplete
       objectReference: {fileID: 0}
-    - target: {fileID: 3525849773682313536, guid: d8485345dee89cb40b5927f7db113743, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5416457791230641992, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: m_Name
       value: VictoryScreen
