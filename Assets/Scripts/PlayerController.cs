@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		interactionLayer = 1 << gameObject.layer | 1 << 8;
+		interactionLayer = 1 << gameObject.layer | 1 << 31;
 	}
 
 	private void Update()
