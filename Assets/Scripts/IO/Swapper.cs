@@ -18,12 +18,10 @@ public class Swapper : OutputObject
 
 	void Swap()
 	{
-		var oldPositions = new Queue<Vector3>(players.Select(p => p.transform.position));
-		var firstPos = oldPositions.Dequeue();
-		List<Vector3> newPositions = oldPositions.ToList();
-		newPositions.Add(firstPos);
-		Debug.Log(string.Join(", ", newPositions));
+		var positions = new Queue<Vector3>(players.Select(p => p.transform.position));
+		positions.Enqueue(positions.Dequeue());
 
+		var newPositions = positions.ToList();
 		for (int i = 0; i < newPositions.Count; i++)
 		{
 			players[i].transform.position = newPositions[i];
