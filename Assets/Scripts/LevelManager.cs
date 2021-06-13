@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
 	private void Awake()
 	{
 		goals = GetComponentsInChildren<Goal>();
+		levelsToUnlock = levelsToUnlock.Where(l => l != null).ToArray();
 	}
 
 	private void Update()
@@ -55,6 +56,5 @@ public class LevelManager : MonoBehaviour
 		}
 
 		StartCoroutine(FadeElement(victoryScreen, 0.5f, 0, 1, 0));
-
 	}
 }
