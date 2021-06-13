@@ -223,3 +223,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputs: []
   button: {fileID: 6461587985271719616}
+  pressureplateTriggerSound: {fileID: 8300000, guid: 2662a7f03db6dba49af9416064b21d9a, type: 3}

@@ -293,3 +293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3995028e4d6401046bf1043ea8bde070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryScreen: {fileID: 0}
+  prompt: {fileID: 0}
+  promptCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  levelsToUnlock: []
+  victorySound: {fileID: 8300000, guid: 58a0da9ea824e014e8cd6f09eff9870e, type: 3}
