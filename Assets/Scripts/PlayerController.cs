@@ -12,12 +12,11 @@ public class PlayerController : MonoBehaviour
 	public Transform cameraContainer;
 
 	new Rigidbody rigidbody;
-	public int interactionLayer;
+	public LayerMask interactionLayer;
 
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		interactionLayer = 1 << gameObject.layer | 1 << 31;
 	}
 
 	private void Update()
