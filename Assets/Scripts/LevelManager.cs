@@ -15,8 +15,6 @@ public class LevelManager : MonoBehaviour
 	public AnimationCurve promptCurve;
 	float promptTime;
 
-	public Object nextLevel;
-
 	public Object[] levelsToUnlock;
 
 	private void Awake()
@@ -59,8 +57,4 @@ public class LevelManager : MonoBehaviour
 		StartCoroutine(FadeElement(victoryScreen, 0.5f, 0, 1, 0));
 
 	}
-
-	public void LoadNextLevel() => SceneManager.LoadScene(nextLevel.name);
-
-	public void ToMenu() => SceneManager.LoadScene(0);
 }
