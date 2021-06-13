@@ -6,6 +6,7 @@ public class RetractableWall : OutputObject
 {
 	new Collider collider;
 	new MeshRenderer renderer;
+	bool isPassable;
 
 	private void Awake()
 	{
@@ -13,13 +14,14 @@ public class RetractableWall : OutputObject
 		renderer = GetComponent<MeshRenderer>();
 	}
 
-	public override void Trigger()
-	{
-		collider.enabled = renderer.enabled = false;
-	}
+	public override void Trigger() => Toggle();
 
-	public override void Untrigger()
+	public override void Untrigger() => Toggle();
+
+	void Toggle()
 	{
-		collider.enabled = renderer.enabled = true;
+		collider.enabled = renderer.enabled = isPassable;
+		isPassable = !isPassable;
+
 	}
 }

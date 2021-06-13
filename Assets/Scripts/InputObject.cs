@@ -4,13 +4,13 @@ using UnityEngine;
 
 public abstract class InputObject : MonoBehaviour
 {
-	public OutputObject output;
+	public List<OutputObject> outputs;
 	public virtual void Interact()
 	{
-		output.Trigger();
+		outputs.ForEach(o => o.Trigger());
 	}
 	public virtual void EndInteract()
 	{
-		output.Untrigger();
+		outputs.ForEach(o => o.Untrigger());
 	}
 }
