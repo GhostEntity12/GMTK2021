@@ -929,7 +929,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'level 7
 
-        <size=40>levers'
+        <size=40>buttons 4'
       objectReference: {fileID: 0}
     - target: {fileID: 2434718005691158144, guid: 910ae62c6ed37524ca9d3be20f6827eb, type: 3}
       propertyPath: m_Pivot.x
@@ -1036,7 +1036,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'level 9
 
-        <size=40>levers'
+        <size=40>double doors'
       objectReference: {fileID: 0}
     - target: {fileID: 2434718005691158144, guid: 910ae62c6ed37524ca9d3be20f6827eb, type: 3}
       propertyPath: m_Pivot.x
@@ -1973,7 +1973,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'level 8
 
-        <size=40>levers'
+        <size=40>basic levers'
       objectReference: {fileID: 0}
     - target: {fileID: 2434718005691158144, guid: 910ae62c6ed37524ca9d3be20f6827eb, type: 3}
       propertyPath: m_Pivot.x
@@ -2698,7 +2698,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'level 10
 
-        <size=40>levers'
+        <size=40>swapping sides'
       objectReference: {fileID: 0}
     - target: {fileID: 2434718005691158144, guid: 910ae62c6ed37524ca9d3be20f6827eb, type: 3}
       propertyPath: m_Pivot.x
