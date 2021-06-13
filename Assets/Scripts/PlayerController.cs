@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -25,6 +26,10 @@ public class PlayerController : MonoBehaviour
 		if (direction.magnitude > 1)
 		{
 			direction.Normalize();
+		}
+		if (Input.GetButtonDown("Interact"))
+		{
+			Physics.OverlapBox(transform.position, new Vector3(1, 1, 1)).ToList().Where(c => c.GetComponent<Lever>()).Select(i => i.GetComponent<Lever>()).ToList().ForEach(l => l.Toggle());
 		}
     }
 
