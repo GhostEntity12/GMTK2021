@@ -16,7 +16,6 @@ public class Lever : InputObject
 	{
 		on = !on;
 		lever.localRotation = Quaternion.Euler(-lever.localRotation.eulerAngles.x, 0, 0);
-		audioSource.PlayOneShot(leverPullSound);
 		if (on)
 		{
 			Interact();
@@ -25,5 +24,6 @@ public class Lever : InputObject
 		{
 			EndInteract();
 		}
+		audioSource.PlayOneShot(leverPullSound);
 	}
 }
