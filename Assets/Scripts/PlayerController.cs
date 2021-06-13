@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetButtonDown("Interact"))
 		{
-			Physics.OverlapBox(transform.position, new Vector3(1, 1, 1), Quaternion.identity, interactionLayer).ToList().Where(c => c.GetComponent<Lever>()).Select(i => i.GetComponent<Lever>()).ToList().ForEach(l => l.Toggle());
+			Physics.OverlapSphere(transform.position, 0.6f, interactionLayer).ToList().Where(c => c.GetComponent<Lever>()).Select(i => i.GetComponent<Lever>()).ToList().ForEach(l => l.Toggle());
 		}
     }
 
