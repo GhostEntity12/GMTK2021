@@ -19,6 +19,5 @@ public class CameraController : MonoBehaviour
 			direction.Normalize();
 		}
 		transform.position += (transform.forward * direction.x + transform.right * direction.z) * movSpeed * Time.deltaTime;
-		Debug.Log(direction);
 	}
 }
