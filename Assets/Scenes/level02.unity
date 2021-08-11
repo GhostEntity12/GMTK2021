@@ -220,8 +220,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4698565950377231112, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: nextLevel
-      value: 
-      objectReference: {fileID: 102900000, guid: fe066c32c846b544295f37b999c33449, type: 3}
+      value: level03
+      objectReference: {fileID: 0}
     - target: {fileID: 8234655694774660635, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: m_text
       value: level 2
@@ -898,8 +898,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2397213930238783229, guid: 3ccaaba2c5d41f7489e208bb74cdf5b7, type: 3}
       propertyPath: levelsToUnlock.Array.data[0]
-      value: 
-      objectReference: {fileID: 102900000, guid: fe066c32c846b544295f37b999c33449, type: 3}
+      value: level03
+      objectReference: {fileID: 0}
     - target: {fileID: 2397213930238783229, guid: 3ccaaba2c5d41f7489e208bb74cdf5b7, type: 3}
       propertyPath: promptCurve.m_Curve.Array.size
       value: 4

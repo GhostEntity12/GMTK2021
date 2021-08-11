@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelEndButtons : MonoBehaviour
 {
-	public Object nextLevel;
+	public string nextLevel;
 
-	public void LoadNextLevel() => SceneManager.LoadScene(nextLevel.name);
+	public void LoadNextLevel() => SceneManager.LoadScene(nextLevel);
 
 	public void ToMenu() => SceneManager.LoadScene(0);
 }

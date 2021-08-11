@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
 	public AnimationCurve promptCurve;
 	float promptTime;
 
-	public Object[] levelsToUnlock;
+	public string[] levelsToUnlock;
 
 	AudioSource audioSource;
 	public AudioClip victorySound;
@@ -54,11 +54,11 @@ public class LevelManager : MonoBehaviour
 		audioSource.PlayOneShot(victorySound, 0.5f);
 		FindObjectsOfType<PlayerController>().ToList().ForEach(p => p.enabled = false);
 		PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "complete");
-		foreach (Object level in levelsToUnlock)
+		foreach (string level in levelsToUnlock)
 		{
-			if (PlayerPrefs.GetString(level.name) != "complete")
+			if (PlayerPrefs.GetString(level) != "complete")
 			{
-				PlayerPrefs.SetString(level.name, "unlocked");
+				PlayerPrefs.SetString(level, "unlocked");
 			}
 		}
 

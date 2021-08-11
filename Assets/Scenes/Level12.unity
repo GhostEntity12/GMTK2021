@@ -370,8 +370,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2397213930238783229, guid: 3ccaaba2c5d41f7489e208bb74cdf5b7, type: 3}
       propertyPath: levelsToUnlock.Array.data[0]
-      value: 
-      objectReference: {fileID: 102900000, guid: 045d36abbbc0197418978a8049ff7114, type: 3}
+      value: level13
+      objectReference: {fileID: 0}
     - target: {fileID: 5170777364694499347, guid: 3ccaaba2c5d41f7489e208bb74cdf5b7, type: 3}
       propertyPath: m_Name
       value: Goals
@@ -2874,8 +2874,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4698565950377231112, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: nextLevel
-      value: 
-      objectReference: {fileID: 102900000, guid: 045d36abbbc0197418978a8049ff7114, type: 3}
+      value: level13
+      objectReference: {fileID: 0}
     - target: {fileID: 8234655694774660635, guid: d8485345dee89cb40b5927f7db113743, type: 3}
       propertyPath: m_text
       value: level 12

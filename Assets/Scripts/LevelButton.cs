@@ -6,12 +6,12 @@ public class LevelButton : MonoBehaviour
 {
     public Image icon;
     public Sprite padlock, star, starFilled;
-    public Object scene;
+    public string scene;
 
     // Start is called before the first frame update
     void Start()
     {
-		switch (PlayerPrefs.GetString(scene.name))
+		switch (PlayerPrefs.GetString(scene))
 		{
             case "unlocked":
                 icon.sprite = star;
@@ -25,5 +25,5 @@ public class LevelButton : MonoBehaviour
 				break;
 		}
     }
-    public void LoadLevel() => SceneManager.LoadScene(scene.name);
+    public void LoadLevel() => SceneManager.LoadScene(scene);
 }

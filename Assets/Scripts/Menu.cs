@@ -4,10 +4,10 @@ public class Menu : MonoBehaviour
 {
     void Awake()
     {
-		if (PlayerPrefs.GetString("level1") == "")
+		if (PlayerPrefs.GetString("level01") == "")
 		{
             Debug.Log("Creating PlayerPrefs");
-            PlayerPrefs.SetString("level1", "unlocked");
+            PlayerPrefs.SetString("level01", "unlocked");
 		}
     }
 
